@@ -10,4 +10,4 @@ edition = "2018"
 stdweb = "0.4.19"
 yew = "0.9.0"
 serde = "1.0.101"
-driver = { path = "../../decaf-lang/decaf-rs/driver" }
+driver = { git = "https://github.com/decaf-lang/decaf-rs.git" }
