@@ -9,9 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: hecrj/setup-rust-action@v1
-      with:
-        rust-version: nightly-2019-10-01
+    - name: Change rust version
+      run: rustup default nightly-2019-10-01
     - name: Install cargo-web
       run: cargo install cargo-web
     - name: Build main

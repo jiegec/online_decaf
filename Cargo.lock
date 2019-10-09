@@ -158,12 +158,12 @@ dependencies = [
 [[package]]
 name = "codegen"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
  "bitset 0.1.0 (git+https://github.com/MashPlant/bitset)",
- "common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tac 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tacopt 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tac 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tacopt 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
 ]
 
 [[package]]
@@ -178,7 +178,7 @@ dependencies = [
 [[package]]
 name = "common"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
  "hashbrown 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "indexmap 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -205,19 +205,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "driver"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
  "clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "codegen 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "codegen 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "colored 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "print 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "syntax 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tac 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tacgen 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tacopt 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "print 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "syntax 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tac 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tacgen 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tacopt 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "tacvm 0.1.0 (git+https://github.com/MashPlant/tacvm)",
- "typeck 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "typeck 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "typed-arena 1.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -412,7 +412,7 @@ dependencies = [
 name = "online_decaf"
 version = "0.1.0"
 dependencies = [
- "driver 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "driver 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "serde 1.0.101 (registry+https://github.com/rust-lang/crates.io-index)",
  "stdweb 0.4.19 (registry+https://github.com/rust-lang/crates.io-index)",
  "yew 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -458,13 +458,13 @@ source = "git+https://github.com/MashPlant/re2dfa#d3544ab7dd45aca4ade81773ac88dd
 [[package]]
 name = "print"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
- "codegen 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "syntax 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tac 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tacopt 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "codegen 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "syntax 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tac 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tacopt 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
 ]
 
 [[package]]
@@ -760,9 +760,9 @@ dependencies = [
 [[package]]
 name = "syntax"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
- "common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "derive_more 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parser-macros 0.1.0 (git+https://github.com/MashPlant/lalr1)",
@@ -772,9 +772,9 @@ dependencies = [
 [[package]]
 name = "tac"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
- "common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "strum 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "strum_macros 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "typed-arena 1.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -783,22 +783,22 @@ dependencies = [
 [[package]]
 name = "tacgen"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
- "common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "syntax 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tac 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "syntax 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tac 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "typed-arena 1.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "tacopt"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
  "bitset 0.1.0 (git+https://github.com/MashPlant/bitset)",
- "common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "tac 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "tac 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "typed-arena 1.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -841,10 +841,10 @@ dependencies = [
 [[package]]
 name = "typeck"
 version = "0.1.0"
-source = "git+https://github.com/decaf-lang/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
 dependencies = [
- "common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
- "syntax 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)",
+ "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
+ "syntax 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "typed-arena 1.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -1029,12 +1029,12 @@ dependencies = [
 "checksum cfg-if 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
 "checksum cgmath 0.16.1 (registry+https://github.com/rust-lang/crates.io-index)" = "64a4b57c8f4e3a2e9ac07e0f6abc9c24b6fc9e1b54c3478cfb598f3d0023e51c"
 "checksum clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)" = "5067f5bb2d80ef5d68b4c87db81601f0b75bca627bc2ef76b141d7b846a3c6d9"
-"checksum codegen 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
+"checksum codegen 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
 "checksum colored 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "6cdb90b60f2927f8d76139c72dbde7e10c3a2bc47c8594c9c7a66529f2687c03"
-"checksum common 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
+"checksum common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
 "checksum derive_more 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)" = "7a141330240c921ec6d074a3e188a7c7ef95668bb95e7d44fa0e5778ec2a7afe"
 "checksum discard 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "212d0f5754cb6769937f4501cc0e67f4f4483c8d2c3e1e922ee9edbe4ab4c7c0"
-"checksum driver 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
+"checksum driver 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
 "checksum failure 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "795bd83d3abeb9220f257e597aa0080a508b27533824adf336529648f6abf7e2"
 "checksum failure_derive 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "ea1063915fd7ef4309e222a5a07cf9c319fb9c7836b1f89b85458672dbb127e1"
 "checksum fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)" = "2fad85553e09a6f881f739c29f0b00b0f01357c743266d478b68951ce23285f3"
@@ -1061,7 +1061,7 @@ dependencies = [
 "checksum parser-gen 0.1.0 (git+https://github.com/MashPlant/lalr1)" = "<none>"
 "checksum parser-macros 0.1.0 (git+https://github.com/MashPlant/lalr1)" = "<none>"
 "checksum print 0.1.0 (git+https://github.com/MashPlant/re2dfa)" = "<none>"
-"checksum print 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
+"checksum print 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
 "checksum proc-macro-hack 0.5.10 (registry+https://github.com/rust-lang/crates.io-index)" = "114cdf1f426eb7f550f01af5f53a33c0946156f6814aec939b3bd77e844f9a9d"
 "checksum proc-macro-nested 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "369a6ed065f249a159e06c45752c780bda2fb53c995718f9e484d08daa9eb42e"
 "checksum proc-macro2 0.4.30 (registry+https://github.com/rust-lang/crates.io-index)" = "cf3d2011ab5c909338f7887f4fc896d35932e29146c12c8d01da6b22a80ba759"
@@ -1098,15 +1098,15 @@ dependencies = [
 "checksum syn 0.15.44 (registry+https://github.com/rust-lang/crates.io-index)" = "9ca4b3b69a77cbe1ffc9e198781b7acb0c7365a883670e8f1c1bc66fba79a5c5"
 "checksum syn 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)" = "66850e97125af79138385e9b88339cbcd037e3f28ceab8c5ad98e64f0f1f80bf"
 "checksum synstructure 0.10.2 (registry+https://github.com/rust-lang/crates.io-index)" = "02353edf96d6e4dc81aea2d8490a7e9db177bf8acb0e951c24940bf866cb313f"
-"checksum syntax 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
-"checksum tac 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
-"checksum tacgen 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
-"checksum tacopt 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
+"checksum syntax 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
+"checksum tac 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
+"checksum tacgen 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
+"checksum tacopt 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
 "checksum tacvm 0.1.0 (git+https://github.com/MashPlant/tacvm)" = "<none>"
 "checksum textwrap 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)" = "d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060"
 "checksum thread_local 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)" = "c6b53e329000edc2b34dbe8545fd20e55a333362d0a321909685a19bd28c3f1b"
 "checksum toml 0.5.3 (registry+https://github.com/rust-lang/crates.io-index)" = "c7aabe75941d914b72bf3e5d3932ed92ce0664d49d8432305a8b547c37227724"
-"checksum typeck 0.1.0 (git+https://github.com/decaf-lang/decaf-rs.git)" = "<none>"
+"checksum typeck 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)" = "<none>"
 "checksum typed-arena 1.6.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9c0704a799d314795d3d847d519b284bae681ef9b1f3da99f7ebc7b47ba2e607"
 "checksum unescape 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ccb97dac3243214f8d8507998906ca3e2e0b900bf9bf4870477f125b82e68f6e"
 "checksum unicode-segmentation 1.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "1967f4cdfc355b37fd76d2a954fb2ed3871034eb4f26d60537d88795cfc332a9"
