@@ -40,7 +40,6 @@ impl Component for Model {
                 true
             }
             Msg::InputPa(input) => {
-                self.console.log(&format!("{:?}", input));
                 if let html::ChangeData::Select(select) = input {
                     self.pa = select.raw_value();
                 }

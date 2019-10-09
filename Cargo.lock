@@ -158,7 +158,7 @@ dependencies = [
 [[package]]
 name = "codegen"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "bitset 0.1.0 (git+https://github.com/MashPlant/bitset)",
  "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
@@ -178,7 +178,7 @@ dependencies = [
 [[package]]
 name = "common"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "hashbrown 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "indexmap 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -205,7 +205,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "driver"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "codegen 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
@@ -458,7 +458,7 @@ source = "git+https://github.com/MashPlant/re2dfa#d3544ab7dd45aca4ade81773ac88dd
 [[package]]
 name = "print"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "codegen 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
@@ -760,7 +760,7 @@ dependencies = [
 [[package]]
 name = "syntax"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "derive_more 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -772,7 +772,7 @@ dependencies = [
 [[package]]
 name = "tac"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "strum 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -783,7 +783,7 @@ dependencies = [
 [[package]]
 name = "tacgen"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "syntax 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
@@ -794,7 +794,7 @@ dependencies = [
 [[package]]
 name = "tacopt"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "bitset 0.1.0 (git+https://github.com/MashPlant/bitset)",
  "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
@@ -841,7 +841,7 @@ dependencies = [
 [[package]]
 name = "typeck"
 version = "0.1.0"
-source = "git+https://github.com/jiegec/decaf-rs.git#cf5fe9afbd2c914bf71c44726b4d47d175275890"
+source = "git+https://github.com/jiegec/decaf-rs.git#ef3ca752b6f3a499cfc938c2df810710c58597dc"
 dependencies = [
  "common 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
  "syntax 0.1.0 (git+https://github.com/jiegec/decaf-rs.git)",
