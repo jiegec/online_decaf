@@ -1,0 +1,28 @@
+name: Rust CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install cargo-web
+      run: cargo install cargo-web
+    - name: Build main
+      run: cargo web build --bin main --release
+    - name: Build worker
+      run: cargo web build --bin worker --release
+    - name: Copy js files
+      run: cp --remove-destination target/wasm*/release/*.js static
+    - name: Copy wasm files
+      run: cp --remove-destination target/wasm*/release/*.wasm static
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@2.0.2
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: static
