@@ -78,6 +78,9 @@ impl Renderable<Model> for Model {
                         <option> { "PA1-A" } </option>
                         <option> { "PA1-B" } </option>
                         <option> { "PA2" } </option>
+                        <option> { "PA3" } </option>
+                        <option> { "PA4" } </option>
+                        <option> { "PA5" } </option>
                     </select>
                 </form>
                 <h3> { "VM Status" } </h3>
