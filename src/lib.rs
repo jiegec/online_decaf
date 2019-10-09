@@ -68,8 +68,8 @@ impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
         html! {
             <div>
-                <h1> { "Online Decaf VM" }</h1>
-                <h3> { "VM Input" } </h3>
+                <h1> { "Online Decaf Compiler" }</h1>
+                <h3> { "Input" } </h3>
                 <form>
                     <label for="code"> { "Code" } </label>
                     <textarea style="height: 50vh" name="code" oninput=|content| Msg::InputCode(content)></textarea>
@@ -83,9 +83,9 @@ impl Renderable<Model> for Model {
                         <option> { "PA5" } </option>
                     </select>
                 </form>
-                <h3> { "VM Status" } </h3>
+                <h3> { "Status" } </h3>
                 <pre>{ &self.status } </pre>
-                <h3> { "Standard Output" } </h3>
+                <h3> { "Output" } </h3>
                 <pre>{ &self.output } </pre>
             </div>
         }
