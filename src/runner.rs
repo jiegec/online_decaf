@@ -22,7 +22,8 @@ impl Agent for Runner {
             "PA2" => driver::Pa::Pa2,
             "PA3" => driver::Pa::Pa3,
             "PA4" => driver::Pa::Pa4,
-            "PA5" => driver::Pa::Pa5,
+            "PA5-MIPS" => driver::Pa::Pa5,
+            "PA5-WAST" => driver::Pa::Pa5Wast,
             _ => unreachable!(),
         };
         let (output, status) =
