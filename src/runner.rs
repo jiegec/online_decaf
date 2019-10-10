@@ -26,15 +26,18 @@ impl Agent for Runner {
             "PA5-WAST" => driver::Pa::Pa5Wast,
             _ => unreachable!(),
         };
-        let (output, status) =
-            match driver::compile(&msg.code, &driver::Alloc::default(), pa.to_cfg()) {
-                Ok(output) => (output, format!("Compliation for pa {} success", msg.pa)),
-                Err(err) => (
-                    String::new(),
-                    format!("Compliation for pa {} failed with {:?}", msg.pa, err),
-                ),
-            };
-        self.link.response(id, Response { output, status });
+
+        let alloc = driver::Alloc::default();
+        let result = driver::compile(&msg.code, &alloc, pa.to_cfg());
+        let valid = result.is_ok();
+        let (output, status) = match result {
+            Ok(output) => (output, format!("Compliation for pa {} success", msg.pa)),
+            Err(err) => (
+                String::new(),
+                format!("Compliation for pa {} failed with {:?}", msg.pa, err),
+            ),
+        };
+        self.link.response(id, Response { output, status, valid });
     }
 
     fn name_of_resource() -> &'static str {

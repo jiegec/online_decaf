@@ -19,6 +19,7 @@ impl Transferable for Request {}
 pub struct Response {
     pub output: String,
     pub status: String,
+    pub valid: bool,
 }
 
 impl Transferable for Response {}
