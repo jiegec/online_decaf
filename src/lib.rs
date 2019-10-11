@@ -6,11 +6,13 @@ pub mod runner;
 use common::{Msg, Request};
 use stdweb::{js, web::window, Value};
 use yew::agent::{Bridge, Bridged};
-use yew::services::ConsoleService;
+use yew::format::Text;
+use yew::services::{storage::Area, ConsoleService, StorageService};
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 
 pub struct Model {
     console: ConsoleService,
+    storage: StorageService,
     runner: Box<dyn Bridge<runner::Runner>>,
     code: String,
     output: String,
@@ -25,10 +27,13 @@ impl Component for Model {
 
     fn create(_: Self::Properties, mut link: ComponentLink<Self>) -> Self {
         let callback = link.send_back(|resp| Msg::RunnerResp(resp));
+        let storage = StorageService::new(Area::Local);
+        let code = storage.restore::<Text>("code").unwrap_or(String::new());
         Model {
             console: ConsoleService::new(),
+            storage,
             runner: runner::Runner::bridge(callback),
-            code: String::new(),
+            code,
             output: String::new(),
             exec_output: None,
             status: String::new(),
@@ -40,6 +45,7 @@ impl Component for Model {
         let should_run = match msg {
             Msg::InputCode(input) => {
                 self.code = input.value;
+                self.storage.store("code", Ok(self.code.clone()));
                 true
             }
             Msg::InputPa(input) => {
@@ -114,7 +120,7 @@ impl Renderable<Model> for Model {
                 <h3> { "Input" } </h3>
                 <form>
                     <label for="code"> { "Code" } </label>
-                    <textarea style="height: 50vh" name="code" oninput=|content| Msg::InputCode(content)></textarea>
+                    <textarea style="height: 50vh" name="code" oninput=|content| Msg::InputCode(content)> { &self.code } </textarea>
                     <label for="pa"> { "PA selection" } </label>
                     <select name="pa" id="pa" onchange=|content| Msg::InputPa(content)>
                         <option> { "PA1-A" } </option>
