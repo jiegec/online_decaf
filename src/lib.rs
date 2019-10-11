@@ -7,12 +7,14 @@ use common::{Msg, Request};
 use yew::agent::{Bridge, Bridged};
 use yew::services::ConsoleService;
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
+use stdweb::{js, Value};
 
 pub struct Model {
     console: ConsoleService,
     runner: Box<dyn Bridge<runner::Runner>>,
     code: String,
     output: String,
+    exec_output: Option<String>,
     status: String,
     pa: String,
 }
@@ -28,6 +30,7 @@ impl Component for Model {
             runner: runner::Runner::bridge(callback),
             code: String::new(),
             output: String::new(),
+            exec_output: None,
             status: String::new(),
             pa: String::from("PA1-A"),
         }
@@ -48,12 +51,24 @@ impl Component for Model {
             Msg::RunnerResp(resp) => {
                 self.output = resp.output;
                 self.status = resp.status;
+
+                if self.pa == "PA5-WAST" && resp.valid {
+                    let code = self.output.clone();
+
+                    let output: Value = js! {
+                        return window.execute(@{code});
+                    };
+
+                    self.exec_output = output.as_str().map(|s| s.to_owned());
+                }
+
                 false
             }
         };
 
         if should_run {
             self.status = format!("Running...");
+            self.exec_output = None;
             self.runner.send(Request {
                 code: self.code.clone(),
                 pa: self.pa.clone(),
@@ -65,6 +80,13 @@ impl Component for Model {
 
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
+        let exec_block = self.exec_output.as_ref().map(|e| html! {
+            <div>
+                <h3> { "Execute output" } </h3>
+                <pre>{ e } </pre>
+            </div>
+        }).unwrap_or_else(|| html! { <div></div> });
+
         html! {
             <div>
                 <h1> { "Online Decaf Compiler" }</h1>
@@ -83,6 +105,9 @@ impl Renderable<Model> for Model {
                         <option> { "PA5-WAST" } </option>
                     </select>
                 </form>
+
+                { exec_block }
+
                 <h3> { "Status" } </h3>
                 <pre>{ &self.status } </pre>
                 <h3> { "Output" } </h3>
