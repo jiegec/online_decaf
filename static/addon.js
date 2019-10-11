@@ -26,23 +26,22 @@ WabtModule().then(wabt => {
       const mod = wabt.parseWat('test.wast', text);
       mod.resolveNames();
       mod.validate();
+      const { buffer: bin, log } = mod.toBinary({ log: true, write_debug_names: true });
+
+      const wasmMod = new WebAssembly.Module(bin);
+      const inst = new WebAssembly.Instance(wasmMod, {
+        wasi_unstable: {
+          fd_write
+        }
+      });
+
+      const { _start, memory } = inst.exports;
+
+      wasmMemory.memory = memory;
+      _start();
     } catch (err) {
       return err.toString();
     }
-
-    const { buffer: bin, log } = mod.toBinary({ log: true, write_debug_names: true });
-
-    const wasmMod = new WebAssembly.Module(bin);
-    const inst = new WebAssembly.Instance(wasmMod, {
-      wasi_unstable: {
-        fd_write
-      }
-    });
-
-    const { _start, memory } = inst.exports;
-
-    wasmMemory.memory = memory;
-    _start();
 
     return output;
   };
