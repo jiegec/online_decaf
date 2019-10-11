@@ -20,3 +20,9 @@ cargo web build --bin worker --release
 ```
 
 See .github/workflows/rust.yml for more.
+
+## License
+
+Licensed under MIT License.
+
+`static/libwabt.js` is taken from [WABT Online Demo](https://webassembly.github.io/wabt/demo/wat2wasm/).
