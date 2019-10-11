@@ -22,9 +22,13 @@ WabtModule().then(wabt => {
       output += result.map(e => String.fromCharCode(e)).join();
     };
 
-    const mod = wabt.parseWat('test.wast', text);
-    mod.resolveNames();
-    mod.validate();
+    try {
+      const mod = wabt.parseWat('test.wast', text);
+      mod.resolveNames();
+      mod.validate();
+    } catch (err) {
+      return err.toString();
+    }
 
     const { buffer: bin, log } = mod.toBinary({ log: true, write_debug_names: true });
 
