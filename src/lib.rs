@@ -83,6 +83,7 @@ impl Renderable<Model> for Model {
         let exec_block = self.exec_output.as_ref().map(|e| html! {
             <div>
                 <h3> { "Execute output" } </h3>
+                <h4> { "Hint: long-running or indefinite code might cause your browser to freeze" } </h4>
                 <pre>{ e } </pre>
             </div>
         }).unwrap_or_else(|| html! { <div></div> });
