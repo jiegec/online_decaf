@@ -37,7 +37,14 @@ impl Agent for Runner {
                 format!("Compliation for pa {} failed with {:?}", msg.pa, err),
             ),
         };
-        self.link.response(id, Response { output, status, valid });
+        self.link.response(
+            id,
+            Response {
+                output,
+                status,
+                valid,
+            },
+        );
     }
 
     fn name_of_resource() -> &'static str {

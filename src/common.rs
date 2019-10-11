@@ -5,6 +5,7 @@ pub enum Msg {
     InputCode(InputData),
     InputPa(ChangeData),
     RunnerResp(Response),
+    RunTac,
 }
 
 #[derive(Serialize, Deserialize, Debug)]

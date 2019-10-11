@@ -4,10 +4,10 @@ mod common;
 pub mod runner;
 
 use common::{Msg, Request};
+use stdweb::{js, web::window, Value};
 use yew::agent::{Bridge, Bridged};
 use yew::services::ConsoleService;
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
-use stdweb::{js, Value};
 
 pub struct Model {
     console: ConsoleService,
@@ -64,6 +64,15 @@ impl Component for Model {
 
                 false
             }
+            Msg::RunTac => {
+                let window = window();
+                js! {
+                    let code = btoa(@{&self.output});
+                    @{window}.location.href = "/online_tac_vm/#" + code;
+                };
+
+                false
+            }
         };
 
         if should_run {
@@ -87,6 +96,17 @@ impl Renderable<Model> for Model {
                 <pre>{ e } </pre>
             </div>
         }).unwrap_or_else(|| html! { <div></div> });
+        let tac_block = if &self.pa == "PA3" || &self.pa == "PA4" {
+            html! {
+                <div>
+                    <button onclick=|_| Msg::RunTac> { "Run in Tac VM" } </button>
+                </div>
+            }
+        } else {
+            html! {
+                <div></div>
+            }
+        };
 
         html! {
             <div>
@@ -108,6 +128,7 @@ impl Renderable<Model> for Model {
                 </form>
 
                 { exec_block }
+                { tac_block }
 
                 <h3> { "Status" } </h3>
                 <pre>{ &self.status } </pre>
