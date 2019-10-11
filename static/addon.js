@@ -1,34 +1,27 @@
 WabtModule().then(wabt => {
-  window.execute = text =>{
-    const mem = new WebAssembly.Memory({ initial: 256 })
+  window.execute = text => {
     let output = '';
     window.fd_write = (fd, pbuf, iovs_len) => {
-      if(fd !== 1) return;
+      if (fd !== 1) return; // stdout
+      if (window.wasmMemory === undefined) return;
 
-      console.log(`Args: ${fd}, ${pbuf}, ${iovs_len}`);
-      console.log(new DataView(mem.buffer, 0, 256));
-      const view = new DataView(mem.buffer);
-      const buf = view.getUint32(pbuf, true);
-      console.log("Buf at: ", buf);
-      const buf_len = view.getUint32(pbuf + 4, true);
+      const view = new DataView(window.wasmMemory.buffer);
 
       const result = [];
 
-      for(let i = 0; i < buf_len && i < iovs_len; ++i) {
-        const byte = view.getUint8(buf + i);
-        if(byte === 0) break;
-        result.push(byte);
+      for (let i = 0; i < iovs_len; i++) {
+        const buf = view.getUint32(pbuf + i * 8, true);
+        const buf_len = view.getUint32(pbuf + i * 8 + 4, true);
+        for (let j = 0; j < buf_len; j++) {
+          const byte = view.getUint8(buf + j);
+          result.push(byte);
+        }
       }
-
-      console.log(result);
 
       output += result.map(e => String.fromCharCode(e)).join();
     };
 
-    const injected = text.replace("(memory 1)",`(memory (import "js" "mem") 1)`);
-    console.log(injected);
-
-    const mod = wabt.parseWat('test.wast', injected);
+    const mod = wabt.parseWat('test.wast', text);
     mod.resolveNames();
     mod.validate();
 
@@ -38,14 +31,12 @@ WabtModule().then(wabt => {
     const inst = new WebAssembly.Instance(wasmMod, {
       wasi_unstable: {
         fd_write
-      },
-      js: {
-        mem,
-      },
+      }
     });
 
-    const { _start } = inst.exports;
+    const { _start, memory } = inst.exports;
 
+    window.wasmMemory = memory;
     _start();
 
     return output;
