@@ -1,11 +1,12 @@
 WabtModule().then(wabt => {
   window.execute = text => {
     let output = '';
+    let wasmMemory = {};
     window.fd_write = (fd, pbuf, iovs_len) => {
       if (fd !== 1) return; // stdout
-      if (window.wasmMemory === undefined) return;
+      if (wasmMemory.memory === undefined) return;
 
-      const view = new DataView(window.wasmMemory.buffer);
+      const view = new DataView(wasmMemory.memory.buffer);
 
       const result = [];
 
@@ -36,7 +37,7 @@ WabtModule().then(wabt => {
 
     const { _start, memory } = inst.exports;
 
-    window.wasmMemory = memory;
+    wasmMemory.memory = memory;
     _start();
 
     return output;
