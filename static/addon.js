@@ -19,7 +19,7 @@ WabtModule().then(wabt => {
         }
       }
 
-      output += result.map(e => String.fromCharCode(e)).join();
+      output += result.map(e => String.fromCharCode(e)).join('');
     };
 
     try {
